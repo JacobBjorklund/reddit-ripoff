@@ -1,5 +1,11 @@
 fetchMessages()
 
+document.querySelector('form').addEventListener('submit', e => {
+    if (document.querySelector('textarea').value.length === 0) {
+        e.preventDefault()
+        alert("Error: Post content is required!")
+    }
+})
 
 async function fetchMessages() {
     const response = await fetch('/api/messages')
